@@ -17,17 +17,15 @@ export default props => {
                 preco={produto.preco}
                 desc={produto.description}>
                 <div style={{ textAlign: 'center' }}>
-                    <IconButton style='primary btn-block btn-lg' name='COMPRAR' />
+                    <IconButton style='warning btn-lg' icon='shopping-cart' name='COMPRAR' />
                 </div>
             </Card>
         ))
     }
 
     return (
-        <div className='container'>
-            <div className='row' style={{ paddingBottom: '10em' }}>
-                {renderCards()}
-            </div>
+        <div className='row' style={{ paddingBottom: '10em' }}>
+            {renderCards()}
         </div>
     )
 }

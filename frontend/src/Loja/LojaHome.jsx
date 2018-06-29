@@ -26,16 +26,14 @@ export default class Todo extends Component {
 
     render() {
         return (
-            <div>
-                <div className='container'>
-                    <div className="row">
-                        <Grid cols="12 12 9 9">
-                            <Carousel />
-                            <IconButton style='info' icon='search' />
-                            <LojaList list={this.state.list}
-                            />
-                        </Grid>
-                    </div>
+            <div className='container containerBox'>
+                <div className="row">
+                    <Grid cols="12 12 12 12">
+                        <Carousel />
+                        <div style={{paddingTop: 3 +'em'}}>
+                            <LojaList list={this.state.list} />
+                        </div>
+                    </Grid>
                 </div>
             </div>
         )

@@ -6,12 +6,15 @@ import '../template/shop-homepage.css'
 import React from 'react'
 import Menu from '../template/menu'
 import Routes from './routes'
+import Grid from '../template/grid';
 
 export default props => (
-    <div className='container'>
+    <div className='container containerBox'>
         <div className='row'>
-            <Menu />
-            <Routes />
+            <Grid cols='12 12 12 12'>
+                <Menu />
+                <Routes />
+            </Grid>
         </div>
     </div>
 )

@@ -20,9 +20,6 @@ module.exports = {
     plugins: [
         new ExtractTextPlugin('app.css')
     ],
-    externals: {
-        'react': 'React'
-    },
     module: {
         loaders: [{
             test: /.js[x]?$/,

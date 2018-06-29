@@ -1,7 +1,4 @@
 import React, { Component } from 'react'
-
-import Grid from '../template/grid'
-import IconButton from '../template/IconButton'
 import AddProducts from './crud/AddProducts'
 import axios from 'axios'
 import ListProducts from './crud/ListProducts'
@@ -22,10 +19,10 @@ export default class Crud extends Component {
         }
         this.refresh()
         this.handleRemove = this.handleRemove.bind(this)
-/*         this.closeModal = this.closeModal.bind(this)
-        this.openModal = this.openModal.bind(this) */
         this.handleAdd = this.handleAdd.bind(this)
         this.handleChange = this.handleChange.bind(this)
+        this.handleClear = this.handleClear.bind(this)
+        this.handleUpdate = this.handleUpdate.bind(this)
     }
 
     refresh() {
@@ -33,19 +30,16 @@ export default class Crud extends Component {
             .then(res => this.setState({ ...this.state, list: res.data }))
     }
     handleRemove(rowKeys) {
-        alert('sou handle')
-        axios.delete(`${URL}/${rowKeys}`)
-            .then(res => this.refresh())
-            .catch(er => console.log(er))
+        let id = rowKeys
+        id.map(id => {
+            axios.delete(`${URL}/${id}`)
+                .then(res => this.refresh())
+                .catch(er => console.log(er))
+        })
     }
-
-/*     openModal() {
-        this.setState({ open: true });
+    handleClear() {
+        this.refresh()
     }
-
-    closeModal() {
-        this.setState({ open: false });
-    } */
 
     handleAdd() {
         const preco = this.state.preco
@@ -64,22 +58,56 @@ export default class Crud extends Component {
         this.setState(change)
     }
 
+    handleUpdate(rowKeys, cellName, data) {
+        let id = rowKeys
+        switch (cellName) {
+            case 'preco':
+                axios.put(`${URL}/${id}`, {
+                    preco: data
+                })
+                    .then(res => console.log(res))
+                break;
+            case 'nomeProduto':
+                axios.put(`${URL}/${id}`, {
+                    nomeProduto: data
+                })
+                    .then(res => console.log(res))
+                break;
+            case 'foto':
+                axios.put(`${URL}/${id}`, {
+                    foto: data
+                })
+                    .then(res => console.log(res))
+                break;
+            case 'description':
+                axios.put(`${URL}/${id}`, {
+                    description: data
+                })
+                    .then(res => console.log(res))
+                break;
+        }
+
+    }
+
     render() {
         return (
-            <div>
+            <div className='container'>
                 <AddProducts
                     handleAdd={this.handleAdd}
                     handleChange={this.handleChange}
-                    
+                    handleClear={this.handleClear}
+
                     preco={this.state.preco}
                     nomeProduto={this.state.nomeProduto}
                     foto={this.state.foto}
                     description={this.state.description}
-                />
 
+                />
+                <hr />
                 <ListProducts
                     list={this.state.list}
                     handleRemove={this.handleRemove}
+                    handleUpdate={this.handleUpdate}
                 />
 
             </div>
