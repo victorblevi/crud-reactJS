@@ -1,4 +1,4 @@
-const Produtos = require('./Produtos')
+const Produtos = require('./produtos')
 
 Produtos.methods(['get', 'post', 'put', 'delete'])
 Produtos.updateOptions({new: true, runValidators: true})

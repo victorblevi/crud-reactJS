@@ -2,5 +2,7 @@ const mongoose = require('mongoose')
 
 mongoose.Promise = Promise
 
-module.exports = mongoose.connect('mongodb://ds045970.mlab.com:45970/heroku_tg2kvftb')
+const url = process.env.MONGOLAB_URI ? process.env.MONGOLAB_URI : 'mongodb://localhost:3003/api/produtos'
+
+module.exports = mongoose.connect(url, {useMongoClient: true})
 
