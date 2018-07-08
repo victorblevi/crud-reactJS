@@ -1,11 +1,10 @@
+
 body{
     padding: 0% !important;
     background: linear-gradient(to bottom right, rgb(44, 44, 44), 
         rgb(71, 71, 71))!important;
 
 }
-
-
 
 .btn {
     margin-right: 5px;
@@ -21,7 +20,10 @@ body{
 }
 
 .img-adjust{
-    max-width: 300px;
+    max-width: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 .container .productForm{
     padding-top: 3em;
@@ -31,14 +33,44 @@ body{
   border: 1px solid rgba(0, 0, 0, 0.219);
   border-radius: 20px 20px
 }
+
+footer div {
+    padding: 2em 5em 3em 5em ;
+    color: rgb(255, 152, 18);
+    background-color: #171a1d;
+    text-align: center;
+}
+footer div h2{
+    font-size: 1.3em;
+}
+
+footer div p{
+    font-size: 1.0em
+}
+footer picture img{
+    padding-top: 1.5em;
+}
+
+
+
 div .navbar{
     margin: 0;
     padding: 1em;
-    font-size: 1.4em;
+    font-size: 0.9em;
     font-weight: bold;
-    background: linear-gradient(to bottom, rgb(224, 132, 11),
-    rgb(255, 152, 18)) !important
+    color: rgb(255, 204, 138) !important;
+   /*  background: linear-gradient(to bottom, rgb(224, 132, 11),
+    rgb(255, 152, 18)) !important */
 }
+div .navbar a{
+    color: rgb(255, 152, 18) !important;
+}
+div .navbar a:hover{
+    color: rgb(255, 174, 68) !important;
+
+}
+
+
 .card-body{
     text-align: center
 }
@@ -49,14 +81,25 @@ div .navbar{
     color: rgb(255, 167, 52);
 }
 .card-body h5{
-    color: rgb(255, 167, 52);
+    color: rgb(255, 185, 93);
+    font-size: 1.5em;
 }
 .card-body p{
     color: rgb(255, 167, 52); 
 }
+.card-boxshadow{
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.219);
+}
 
-.containerBox{
-    box-shadow: 0 10px 10px 0 rgba(0,0,0,0.15);
+.containerBox-primary{
+    box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.644);
     background: linear-gradient(to bottom, rgb(224, 133, 13),
     rgb(252, 149, 14))
 }
+.containerBox-secondary{
+    box-shadow: 0 10px 10px 0 rgba(0,0,0,0.15);
+    background: linear-gradient(to bottom, rgb(224, 133, 13),
+    rgb(255, 215, 162))
+}
+
+/*###################################################*/

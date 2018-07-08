@@ -19,16 +19,15 @@ export default class ListProducts extends Component {
       
     onBeforeSaveCell(row, cellName, cellValue) {
         let alterar = confirm('Tem certeza que quer fazer essas alterações?')
-        alterar ? this.props.handleUpdate(row._id, cellName, cellValue) : alert('false')
-        return true;
+        alterar ? this.props.handleUpdate(row._id, cellName, cellValue) : console.log('false')
     }
     
     onAfterDeleteRow(rowKeys) {
         this.props.handleRemove(rowKeys)
     }
     createCustomDeleteButton(onBtnClick) {
-        return (<div className="btn-group btn-group-lg">
-               <IconButton style='danger btn-lg' name='Remover' icon='trash-o' onClick={ onBtnClick }
+        return (<div className="btn-group btn-group-md">
+               <IconButton style='danger' name='Remover' icon='trash-o' onClick={ onBtnClick }
                 />
                 </div>)
     }

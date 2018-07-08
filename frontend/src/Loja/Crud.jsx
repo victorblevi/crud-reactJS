@@ -86,17 +86,15 @@ export default class Crud extends Component {
                     .then(res => console.log(res))
                 break;
         }
-
     }
 
     render() {
         return (
-            <div className='container'>
+            <div className='container containerBox-secondary'>
                 <AddProducts
                     handleAdd={this.handleAdd}
                     handleChange={this.handleChange}
                     handleClear={this.handleClear}
-
                     preco={this.state.preco}
                     nomeProduto={this.state.nomeProduto}
                     foto={this.state.foto}

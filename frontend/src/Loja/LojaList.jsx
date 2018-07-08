@@ -17,7 +17,7 @@ export default props => {
                 preco={produto.preco}
                 desc={produto.description}>
                 <div style={{ textAlign: 'center' }}>
-                    <IconButton style='warning btn-lg' icon='shopping-cart' name='COMPRAR' />
+                    <IconButton style='warning' icon='shopping-cart' name='COMPRAR' />
                 </div>
             </Card>
         ))

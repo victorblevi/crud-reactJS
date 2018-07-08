@@ -24,9 +24,9 @@ export default props => (
                         <input id="foto" placeholder="Informe o URL da Foto do Produto" className='form-control' onChange={props.handleChange} name='foto'></input>
                     </fieldset>
                     <div style={{ paddingTop: '2em', textAlign: 'right' }}>
-                        <IconButton style='secondary btn-lg' name='Limpar' icon='repeat'
+                        <IconButton style='secondary' name='Limpar' icon='repeat'
                             onClick={props.handleClear} />
-                        <IconButton style='primary btn-lg' name='Adcionar' icon='plus'
+                        <IconButton style='primary' name='Adcionar' icon='plus'
                             onClick={props.handleAdd} />
                     </div>
                 </form>

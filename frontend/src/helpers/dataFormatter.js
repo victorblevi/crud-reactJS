@@ -22,7 +22,6 @@ export function buttonFormatter(props) {
     )
 }
 
-
 export function priceFormatter(cell, row) {
     return `<i class='glyphicon glyphicon-usd'></i> ${cell}`;
 } 
