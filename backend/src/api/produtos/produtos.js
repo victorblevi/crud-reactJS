@@ -8,4 +8,4 @@ const todoSchema = new mongoose.Schema({
     preco: { type: Number, default: 0 }
 })
 
-module.exports = restful.model('Produtos', todoSchema)
+module.exports = restful.model('produtos', todoSchema)
