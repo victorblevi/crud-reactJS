@@ -3,7 +3,7 @@ import AddProducts from './crud/AddProducts'
 import axios from 'axios'
 import ListProducts from './crud/ListProducts'
 
-const URL = 'http://localhost:3003/api/produtos'
+const URL = 'https://crud-reactjs.herokuapp.com/api/produtos'
 
 export default class Crud extends Component {
 
@@ -31,11 +31,13 @@ export default class Crud extends Component {
     }
     handleRemove(rowKeys) {
         let id = rowKeys
+        alert(`${URL}/${id}`)
         id.map(id => {
             axios.delete(`${URL}/${id}`)
                 .then(res => this.refresh())
                 .catch(er => console.log(er))
         })
+        
     }
     handleClear() {
         this.refresh()
@@ -59,6 +61,7 @@ export default class Crud extends Component {
     }
 
     handleUpdate(rowKeys, cellName, data) {
+        
         let id = rowKeys
         switch (cellName) {
             case 'preco':

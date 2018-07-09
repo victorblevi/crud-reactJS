@@ -7,7 +7,7 @@ import LojaList from './LojaList';
 import Carousel from '../template/carousel';
 import Grid from '../template/grid'
 
-const URL = 'http://localhost:3003/api/produtos'
+const URL = 'https://crud-reactjs.herokuapp.com/api/produtos'
 
 export default class Todo extends Component {
 
